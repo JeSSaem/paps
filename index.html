@@ -2,31 +2,22 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PAPS Calculator</title>
+  <title>PAPS 계산기</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <main class="container">
-    <h1>PAPS 계산기</h1>
-    <form id="paps-form">
-      <label>
-        키 (cm)
-        <input type="number" id="height" required>
-      </label>
-      <label>
-        몸무게 (kg)
-        <input type="number" id="weight" required>
-      </label>
-      <label>
-        오래달리기 (초)
-        <input type="number" id="run" required>
-      </label>
-      <button type="submit">계산하기</button>
-      <button type="reset">초기화</button>
-    </form>
-    <section id="result" class="result hidden"></section>
-  </main>
+  <h1>PAPS 체력 평가 계산기</h1>
+  <form id="papsForm">
+    <label>신장(cm): <input type="number" id="height" required></label><br>
+    <label>체중(kg): <input type="number" id="weight" required></label><br>
+    <label>오래달리기(초): <input type="number" id="run" required></label><br>
+    <label>윗몸일으키기(회): <input type="number" id="situp" required></label><br>
+    <label>좌전굴(cm): <input type="number" id="flex" required></label><br>
+    <label>50m달리기(초): <input type="number" id="sprint" required></label><br>
+    <button type="submit">계산하기</button>
+    <button type="reset">초기화</button>
+  </form>
+  <div id="result"></div>
   <script src="script.js"></script>
 </body>
 </html>
