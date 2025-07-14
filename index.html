@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PAPS Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>PAPS 계산기</h1>
+    <form id="paps-form">
+      <label>
+        키 (cm)
+        <input type="number" id="height" required>
+      </label>
+      <label>
+        몸무게 (kg)
+        <input type="number" id="weight" required>
+      </label>
+      <label>
+        오래달리기 (초)
+        <input type="number" id="run" required>
+      </label>
+      <button type="submit">계산하기</button>
+      <button type="reset">초기화</button>
+    </form>
+    <section id="result" class="result hidden"></section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
