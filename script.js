@@ -3,10 +3,13 @@ document.getElementById('papsForm').addEventListener('submit', function(e) {
 
   const height = parseFloat(document.getElementById('height').value);
   const weight = parseFloat(document.getElementById('weight').value);
-  const run = parseFloat(document.getElementById('run').value);
+  const runMin = parseInt(document.getElementById('run_min').value);
+  const runSec = parseInt(document.getElementById('run_sec').value);
   const situp = parseFloat(document.getElementById('situp').value);
   const flex = parseFloat(document.getElementById('flex').value);
   const sprint = parseFloat(document.getElementById('sprint').value);
+
+  const run = runMin * 60 + runSec;
 
   if ([height, weight, run, situp, flex, sprint].some(isNaN)) {
     document.getElementById('result').innerText = "모든 항목을 정확히 입력해주세요.";
@@ -19,7 +22,7 @@ document.getElementById('papsForm').addEventListener('submit', function(e) {
   let runScore = run < 700 ? 5 : run < 800 ? 4 : run < 900 ? 3 : run < 1000 ? 2 : 1;
   let situpScore = situp > 50 ? 5 : situp > 40 ? 4 : situp > 30 ? 3 : situp > 20 ? 2 : 1;
   let flexScore = flex > 20 ? 5 : flex > 15 ? 4 : flex > 10 ? 3 : flex > 5 ? 2 : 1;
-  let sprintScore = sprint < 8 ? 5 : sprint < 9 ? 4 : sprint < 10 ? 3 : sprint < 11 ? 2 : 1;
+  let sprintScore = sprint < 8.0 ? 5 : sprint < 9.0 ? 4 : sprint < 10.0 ? 3 : sprint < 11.0 ? 2 : 1;
 
   let total = runScore + situpScore + flexScore + sprintScore;
   let average = total / 4;
